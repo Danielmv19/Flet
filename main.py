@@ -19,13 +19,13 @@ def main(page:ft.Page):
 
     def textchange(e):
         try:
-            yt = YouTube(url=e.control.value)
-            print(yt)
-            print(yt.title)
+            video_details=YouTube(url=e.control.value)
+            print(video_details)
+            print(video_details.title)
         except:
-            print('error')
+            print(txt)
 
-    txt = ft.TextField(hint_text='ingresa el link de yt prro/a', on_change=textchange)
+    txt = ft.TextField(label='link', on_change=textchange)
     image = ft.Image(
         src='https://cdn-icons-png.flaticon.com/512/725/725300.png',
         width=140,
@@ -38,4 +38,4 @@ def main(page:ft.Page):
         boton
     )
 
-ft.app(target=main)
+ft.app(target=main) #'https://www.youtube.com/watch?v=kNKu1uNBVkU'
